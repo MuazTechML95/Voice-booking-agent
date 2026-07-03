@@ -1,0 +1,85 @@
+{
+  "business_name": "Generic Voice Appointment Booking Agent",
+
+  "business_types": [
+    "Medical Clinic",
+    "Law Firm",
+    "Salon",
+    "Consultant",
+    "Service Provider",
+    "Educational Institute",
+    "Customer Support"
+  ],
+
+  "appointment_categories": {
+    "Medical Clinic": ["General Checkup", "Follow-up Visit", "New Patient", "Specialist Consultation"],
+    "Law Firm": ["Legal Consultation", "Document Review", "Court Representation", "New Client Intake"],
+    "Salon": ["Haircut", "Hair Coloring", "Spa Treatment", "Bridal Package"],
+    "Consultant": ["Strategy Session", "Initial Consultation", "Follow-up Meeting"],
+    "Service Provider": ["Repair Service", "Installation", "Maintenance", "Inspection"],
+    "Educational Institute": ["Admission Counseling", "Course Consultation", "Parent-Teacher Meeting"],
+    "Customer Support": ["Technical Support", "Billing Query", "General Inquiry"],
+    "default": ["General Consultation", "Follow-up", "New Client", "Other"]
+  },
+
+  "working_hours": {
+    "start": "09:00",
+    "end": "18:00"
+  },
+
+  "knowledge_files": {
+    "Medical Clinic": "medical_clinic.txt",
+    "Law Firm": "law_firm.txt",
+    "Salon": "salon.txt",
+    "Consultant": "consultant.txt",
+    "Service Provider": "service_provider.txt",
+    "Educational Institute": "educational_institute.txt",
+    "Customer Support": "customer_support.txt",
+    "default": "default.txt"
+  },
+
+  "messages": {
+    "greeting": "Hello! Welcome to {business_name}. I can help you book a {business_type} appointment. Would you like to book one now?",
+    "ask_category_prompt": "What type of appointment would you like? Options are: {categories}.",
+    "confirmation_template": "Please confirm the following details:\nBusiness Type: {business_type}\nName: {full_name}\nPhone: {phone}\nCategory: {category}\nDate: {appointment_date}\nTime: {appointment_time}\nPurpose: {purpose}\nDo you want to confirm this appointment? (yes/no)",
+    "success_message": "Your appointment has been booked successfully. Your reference ID is {appointment_id}. Thank you!",
+    "cancel_message": "Okay, I have cancelled this booking request. Feel free to start again anytime.",
+    "goodbye_message": "Thank you for contacting {business_name}. Have a great day!",
+    "not_understood_message": "Sorry, I didn't quite understand that. Could you please repeat?",
+    "reschedule_success": "Your appointment {appointment_id} has been rescheduled to {appointment_date} at {appointment_time}.",
+    "cancel_appointment_success": "Your appointment {appointment_id} has been cancelled."
+  },
+
+  "questions": [
+    {
+      "key": "full_name",
+      "type": "name",
+      "prompt": "May I have your full name, please?",
+      "retry_prompt": "Sorry, that doesn't look like a valid name. Could you tell me your full name again?"
+    },
+    {
+      "key": "phone",
+      "type": "phone",
+      "prompt": "What's the best phone number to reach you on?",
+      "retry_prompt": "That doesn't look like a valid phone number. Please provide a 7 to 15 digit phone number."
+    },
+    {
+      "key": "appointment_date",
+      "type": "date",
+      "prompt": "What date would you like to book the appointment? (e.g. 25th June or 2026-06-25)",
+      "retry_prompt": "I couldn't understand that date, or it is in the past. Please provide a valid future date."
+    },
+    {
+      "key": "appointment_time",
+      "type": "time",
+      "prompt": "What time works best for you? (e.g. 2 PM or 14:00)",
+      "retry_prompt": "I couldn't understand that time, or it's outside working hours (09:00-18:00). Please provide a valid time."
+    },
+    {
+      "key": "purpose",
+      "type": "text",
+      "prompt": "What is the purpose or reason for this appointment?",
+      "retry_prompt": "Could you briefly describe the purpose of your appointment?"
+    }
+  ]
+}

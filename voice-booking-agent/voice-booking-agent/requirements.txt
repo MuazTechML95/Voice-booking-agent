@@ -1,0 +1,18 @@
+# Core application
+streamlit>=1.36.0          # st.audio_input (mic recording widget) requires >=1.36
+python-dotenv>=1.0.1
+python-dateutil>=2.9.0
+
+# NLP / intent understanding / RAG
+openai>=1.30.0
+numpy>=1.26.0
+
+# Text-to-Speech
+pyttsx3>=2.90
+
+# Speech-to-Text (Whisper)
+# 'openai-whisper' needs torch and ffmpeg installed on the system.
+# If you don't want the heavy local model, leave it uninstalled —
+# the app automatically falls back to the OpenAI Whisper API instead
+# (requires OPENAI_API_KEY in .env).
+openai-whisper>=20231117
